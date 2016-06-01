@@ -1,7 +1,14 @@
+<<<<<<< HEAD
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2008
 
 Project("{E1DC63C7-8140-4864-83C1-F66E9E166916}") = "The-Size-Of-You", "Assembly-CSharp.csproj", "{CDDBC01E-BFF8-8C39-EDCE-EBF1225643C7}"
+=======
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "The-Size-Of-You.CSharp", "The-Size-Of-You.CSharp.csproj", "{0B40EB9E-BF79-BF94-45D4-2E467994C649}"
+>>>>>>> 7ec0f5f5d9221a7b085a2ee28e6e659d2dc63072
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,15 +16,25 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+<<<<<<< HEAD
 		{CDDBC01E-BFF8-8C39-EDCE-EBF1225643C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CDDBC01E-BFF8-8C39-EDCE-EBF1225643C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CDDBC01E-BFF8-8C39-EDCE-EBF1225643C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CDDBC01E-BFF8-8C39-EDCE-EBF1225643C7}.Release|Any CPU.Build.0 = Release|Any CPU
+=======
+		{0B40EB9E-BF79-BF94-45D4-2E467994C649}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B40EB9E-BF79-BF94-45D4-2E467994C649}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B40EB9E-BF79-BF94-45D4-2E467994C649}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B40EB9E-BF79-BF94-45D4-2E467994C649}.Release|Any CPU.Build.0 = Release|Any CPU
+>>>>>>> 7ec0f5f5d9221a7b085a2ee28e6e659d2dc63072
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
+<<<<<<< HEAD
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 	EndGlobalSection
+=======
+>>>>>>> 7ec0f5f5d9221a7b085a2ee28e6e659d2dc63072
 EndGlobal
