@@ -215,3 +215,13 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+
+#######
+#Unity
+#######
+
+[Ll]ibrary/
+[Tt]emp/
+Library/assetDatabase3
+Library/metadata/00/00000000000000004000000000000000
+Library/metadata/55/55f718d485d847041bc9852d1bdf295e
