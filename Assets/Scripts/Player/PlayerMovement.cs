@@ -8,9 +8,4 @@ public class PlayerMovement : MonoBehaviour {
     void Start() {
         rigidbody = GetComponent<Rigidbody2D>();
     }
-
-    void Move(Vector2 movement) {
-
-    }
-
 }
