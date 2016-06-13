@@ -1,49 +1,42 @@
 ﻿using UnityEngine;
-using IP = UnityEngine.Input;
 using KC = UnityEngine.KeyCode;
 
 [RequireComponent(typeof (PlayerMovement))]
 public class KeyboardInput : KeyboardInputData {
+
 
     void Start() {
         pm = GetComponent<PlayerMovement>();
     }
 
     void Update() {
-        UpdateToMove();
-        SendToMove();
+        KeyDown();
+        SendKeys();
     }
 
-    void UpdateToMove() {
-        bool up, right, down, left = false;
-
-        up = IP.GetKey(KC.W);
-        right = IP.GetKey(KC.D);
-        down = IP.GetKey(KC.S);
-        left = IP.GetKey(KC.A);
-
-        if (up && down) {
-            up = down = false;
-        } else if (up) {
-            toMove.y = 1;
-        } else if (down) {
-            toMove.y = -1;
-        } else {
-            toMove.y = 0;
-        }
-
-        if (left && right) {
-            left = right = false;
-        } else if (left) {
-            toMove.x = -1;
-        } else if (right) {
-            toMove.x = 1;
-        } else {
-            toMove.x = 0;
-        }
+    void KeyDown() {
+        up = GetKey(KC.W) || GetKey(KC.UpArrow);
+        right = GetKey(KC.D) || GetKey(KC.RightArrow);
+        down = GetKey(KC.S) || GetKey(KC.DownArrow);
+        left = GetKey(KC.A) || GetKey(KC.LeftArrow);
+        pause = GetKeyDown(KC.Escape);
     }
 
-    void SendToMove() {
-        pm.Move(toMove);
+    void SendKeys() {
+        pm.Move(up, down, left, right);
+    }
+
+    // Lazyness...
+    // Don't have to type "Input." now.
+    bool GetKey(KC key) {
+        return Input.GetKey(key);
+    }
+
+    bool GetKeyDown(KC key) {
+        return Input.GetKeyDown(key);
+    }
+
+    bool GetKeyUp(KC key) {
+        return Input.GetKeyUp(key);
     }
 }

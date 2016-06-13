@@ -4,30 +4,56 @@ using System.Collections;
 public class Resizer : MonoBehaviour
 {
     //class for the the recieving of the grow or Shrink Delegates and Changing them acordingly
+    bool canShrink = true;
+    bool canGrow = true;
+    bool canResize = false;
 
-    private Resizing grow;
-    private Resizing shrink;
+    [SerializeField]
+    float resizeCooldown;
+    [SerializeField]
+    float preCooldownPause = 0.01f;
+
+    Resizing grow;
+    Resizing shrink;
 
     void Awake()
     {
         Resizing.Grower += Growing;
         Resizing.Shrinker += Shrinking;
-        //grow = GameObject.FindGameObjectWithTag(Tags.GROWWALL).GetComponent<Resizing>();
-        //grow.Grower += Growing;
-        //shrink = GameObject.FindGameObjectWithTag(Tags.SHRINKWALL).GetComponent<Resizing>();
-        //shrink.Shrinker += Shrinking;
     }
 
     void Shrinking(float shrinkValue)
     {
-        print("how much is it shrinking?: " + shrinkValue);
-        gameObject.transform.localScale -= new Vector3(shrinkValue, shrinkValue);
+        StartCoroutine(ShrinkCoroutine());
+        if (canShrink)
+        {
+            gameObject.transform.localScale -= new Vector3(shrinkValue, shrinkValue);
+        }
     }
 
     void Growing(float growValue)
     {
-        print("how much is it growing?: " + growValue);
-        gameObject.transform.localScale += new Vector3(growValue, growValue);
+        StartCoroutine(GrowCoroutine());
+        if (canGrow)
+        {
+            gameObject.transform.localScale += new Vector3(growValue, growValue);
+        }
+    }
+
+    IEnumerator ShrinkCoroutine()
+    {
+        yield return new WaitForSeconds(preCooldownPause);
+        canShrink = false;
+        yield return new WaitForSeconds(resizeCooldown);
+        canShrink = true;
+    }
+
+    IEnumerator GrowCoroutine()
+    {
+        yield return new WaitForSeconds(preCooldownPause);
+        canGrow = false;
+        yield return new WaitForSeconds(resizeCooldown);
+        canGrow = true;
     }
 }
 //---------------------------------------------------------\\
