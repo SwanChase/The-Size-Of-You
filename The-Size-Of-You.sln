@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
+# Visual Studio 2015
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "The-Size-Of-You.CSharp", "The-Size-Of-You.CSharp.csproj", "{0B40EB9E-BF79-BF94-45D4-2E467994C649}"
 EndProject
 Global
