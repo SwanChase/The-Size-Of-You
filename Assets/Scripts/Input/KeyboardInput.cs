@@ -20,6 +20,7 @@ public class KeyboardInput : KeyboardInputData {
         down = GetKey(KC.S) || GetKey(KC.DownArrow);
         left = GetKey(KC.A) || GetKey(KC.LeftArrow);
         pause = GetKeyDown(KC.Escape);
+        reset = GetKeyDown(KC.R);
     }
 
     void SendKeys() {

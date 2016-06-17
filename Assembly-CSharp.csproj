@@ -54,8 +54,10 @@
      <Compile Include="Assets\Scripts\Level\Resizing.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\Player\Resizer.cs" />
+     <Compile Include="Assets\Scripts\Player\SizeLimiter.cs" />
      <Compile Include="Assets\Scripts\Ui\LevelSelect.cs" />
      <Compile Include="Assets\Scripts\Ui\Music.cs" />
+     <Compile Include="Assets\Scripts\Ui\PauseMenu.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
