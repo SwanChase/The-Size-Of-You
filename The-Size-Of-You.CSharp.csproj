@@ -69,8 +69,10 @@
     <Compile Include="Assets\Scripts\Level\Grow.cs" />
     <Compile Include="Assets\Scripts\Level\Resizing.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerSFX.cs" />
     <Compile Include="Assets\Scripts\Player\Resizer.cs" />
     <Compile Include="Assets\Scripts\Player\SizeLimiter.cs" />
+    <Compile Include="Assets\Scripts\SoundController.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
