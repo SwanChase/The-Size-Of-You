@@ -9,7 +9,7 @@ public class LevelSelect : MonoBehaviour {
 	}
 
     public void Play() {
-        SceneManager.LoadScene("Play");
+        SceneManager.LoadScene("Chase_Scene");
     }
     public void Options() {
         SceneManager.LoadScene("Options");
