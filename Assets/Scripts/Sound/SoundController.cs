@@ -8,14 +8,16 @@ public class Sound
     public AudioClip clip;
 
     [Range(0f, 1f)]
-    public float volume = 0.5f;
+    public float volume = 0.7f;
     [Range(-1.5f, 1.5f)]
     public float pitch = 1f;
 
-    [Range(0f, 1f)]
+    [Range(0f, 0.5f)]
     public float randomVolume = 0.1f;
-    [Range(0.5f, 0.5f)]
+    [Range(0f, 0.5f)]
     public float randomPitch = 0.1f;
+
+    public bool isLooping = true;
 
     private AudioSource source;
 
@@ -29,7 +31,13 @@ public class Sound
     {
         source.volume = volume * (1 + Random.Range(-randomVolume / 2f, randomVolume / 2f));
         source.pitch = pitch * (1 + Random.Range(-randomPitch / 2f, randomPitch / 2f));
+        source.loop = isLooping;
         source.Play();
+    }
+
+    public void Stop()
+    {
+        source.Stop();
     }
 
 }
@@ -62,8 +70,6 @@ public class SoundController : MonoBehaviour
             _go.transform.SetParent(this.transform);
             sounds[i].SetSource(_go.AddComponent<AudioSource>());
         }
-
-        PlaySound("GrowSFX");
     }
 
     public void PlaySound(string _name)
@@ -78,7 +84,28 @@ public class SoundController : MonoBehaviour
         }
 
         // when there is no sound with _name
-        Debug.LogWarning("AudioController: Sound not Found in list :( , " + _name);
+        Debug.LogWarning("SoundController: Sound not Found in list :( , " + _name);
+    }
+    public void StopSound(string _name)
+    {
+        for (int i = 0; i < sounds.Length; i++)
+        {
+            if (sounds[i].name == _name)
+            {
+                sounds[i].Stop();
+                return;
+            }
+        }
+        // when there is no sound with _name
+        Debug.LogWarning("SoundController: Sound not Found in list :( , " + _name);
+    }
+    public void StopAllSound()
+    {
+        for (int i = 0; i < sounds.Length; i++)
+        {
+            sounds[i].Stop();
+            return;
+        }
     }
 
 }

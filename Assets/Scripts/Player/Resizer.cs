@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Resizer : MonoBehaviour
+public class Resizer : MonoBehaviour//name for script needs to be changed
 {
     //class for the the recieving of the grow or Shrink Delegates and Changing them acordingly
     bool canShrink = true;
@@ -16,6 +16,23 @@ public class Resizer : MonoBehaviour
     Resizing grow;
     Resizing shrink;
 
+    //---------sound
+    [SerializeField]
+    string shrinkSFXName;
+    [SerializeField]
+    string growSFXName;
+
+    SoundController soundController;
+
+    void Start()
+    {
+        soundController = SoundController.instance;
+        if (soundController == null)
+        {
+            Debug.LogError("There aint no SoundController here man");
+        }
+    }
+
     void Awake()
     {
         Resizing.Grower += Growing;
@@ -28,6 +45,7 @@ public class Resizer : MonoBehaviour
         if (canShrink)
         {
             gameObject.transform.localScale -= new Vector3(shrinkValue, shrinkValue);
+            soundController.PlaySound("ShrinkSFX");
         }
     }
 
@@ -37,6 +55,7 @@ public class Resizer : MonoBehaviour
         if (canGrow)
         {
             gameObject.transform.localScale += new Vector3(growValue, growValue);
+            soundController.PlaySound(growSFXName);
         }
     }
 

@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Resizing : MonoBehaviour
+public class Resizing : MonoBehaviour//name for script needs to be changed
 {
-    //make the wall scream out its being touched and make the player listen using Delegates
+    //make the wall say its being touched and make the player listen using Delegates
     //and in the player make a function for resizing the player
     [SerializeField]
     float resizingValue;
